@@ -76,5 +76,22 @@ void loop()
 	lcd.setFontSize(FONT_SIZE_XLARGE);
 	lcd.printLong(12345678);
 	delay(1000);
-}
 
+    int data[] = {
+    10, 10,  20, 30, 30, 50, 60, 70,
+    90, 100, 80, 95, 70, 60, 50, 40,
+    10, 10,  20, 30, 30, 10, 10, 10,
+    10, 10,  20, 30, 30, 10, 10, 10,
+    10, 10,  20, 30, 30, 10, 10, 10,
+    10, 10,  20, 30, 30, 10, 10, 10,
+    10, 10,  20, 30, 30, 10, 10, 10,
+    10, 10,  20, 30, 30, 10, 10, 10,
+    };
+
+    lcd.clear();
+    lcd.setByteSize(BYTE_SIZE_4);
+    lcd.setDomain(0,100);
+    lcd.setCursor(10, 1);
+    lcd.drawGraph(data, DATA_LENGTH_64);
+    delay(1000);
+}
